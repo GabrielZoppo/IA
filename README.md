@@ -24,11 +24,7 @@ def buscaEmLargura(grafo, origem, destino):
             if nosVisitados[n] == 0:
                 nosVisitados[n] = 1
                 fila.append(n)
-
-#chamando a função
-nosVisitados = [0, 0, 0, 0, 0]
-origem = 0
-destino = 4
+                
 #declaração dos grafos
 grafo1 =  [ [1],           # Vizinhos do vértice 0.
           [2, 3],        # Vizinhos do vértice 1.
@@ -50,6 +46,12 @@ grafo3 =  [ [1, 2, 3],           # Vizinhos do vértice 0.
           [0, 4],           # Vizinhos do vértice 3.
           [2]            # Vizinhos do vértice 4.
           ]
+          
+#chamando a função
+nosVisitados = [0, 0, 0, 0, 0]
+origem = 0
+destino = 4
+
 buscaEmLargura(grafo3, origem, destino)
 ~~~
 ## Tempo de Reação do busca em largura:
