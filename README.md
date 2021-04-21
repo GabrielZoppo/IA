@@ -60,3 +60,17 @@ Grafos                  | Tempo de reação            |
 Grafo 1                 |0.000031 µs                 |			 		
 Grafo 2                 |0.000039 µs                 |			 		
 Grafo 3                 |0.000036 µs                 |
+
+## Código python Busca A*:
+~~~python
+
+~~~
+
+## Tempo de Reação da Busca A*:
+Grafos                  | Tempo de reação |
+:----------------------:|:---------------:|             			 		
+Grafo 1                 |                 |			 		
+Grafo 2                 |                 |			 		
+Grafo 3                 |                 |
+
+
