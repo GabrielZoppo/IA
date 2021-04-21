@@ -30,13 +30,13 @@ def buscaEmLargura (origem, destino):
         if no == destino:
                 print("chegou ao destino")
                 fim = time.time()
-                
+                print("Tempo de reação: %f Segundos " % (fim - inicio)) 
                 break
         for n in grafo[no]:
             if nosVisitados[n] == 0:
                 nosVisitados[n] = 1
                 fila.append(n)
-    print("Tempo de reação: %f Segundos " % (fim - inicio))    
+       
 
 
 
