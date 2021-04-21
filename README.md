@@ -46,3 +46,9 @@ destino = 11
 
 buscaEmLargura(origem, destino)
 ~~~
+* Tempo de Reação:
+Grafos                  | Tempo de reação            |
+:----------------------:|:--------------------------:|             			 		
+Grafo 1                 |0.000031 µs                 |			 		
+Grafo 2                 |0.000039 µs                 |			 		
+Grafo 3                 |0.000036 µs                 |
