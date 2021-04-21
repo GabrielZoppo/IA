@@ -5,22 +5,8 @@
 #declaração das bibliotecas
 import time
 
-#declaração dos grafos
-grafo = [[2, 1],
-         [5, 4, 0],
-         [3, 0],
-         [7, 5, 2],
-         [6, 1],
-         [8, 6, 3, 1],
-         [10, 5, 4],
-         [11, 3],
-         [11, 10, 5],
-         [10, 5, 4],
-         [11, 8, 6],
-         [10, 8, 7]]
-
 #declaração da função buscaLargura
-def buscaEmLargura(origem, destino):
+def buscaEmLargura(grafo, origem, destino):
     fila = []
     fila.append(origem)
 
@@ -40,11 +26,31 @@ def buscaEmLargura(origem, destino):
                 fila.append(n)
 
 #chamando a função
-nosVisitados = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+nosVisitados = [0, 0, 0, 0, 0]
 origem = 0
-destino = 11
+destino = 4
+#declaração dos grafos
+grafo1 =  [ [1],           # Vizinhos do vértice 0.
+          [2, 3],        # Vizinhos do vértice 1.
+          [1, 4],        # Vizinhos do vértice 2.
+          [0],           # Vizinhos do vértice 3.
+          [1]            # Vizinhos do vértice 4.
+          ]
 
-buscaEmLargura(origem, destino)
+grafo2 =  [ [1, 2 ],           # Vizinhos do vértice 0.
+          [2, 3],        # Vizinhos do vértice 1.
+          [0, 1, 2, 4],        # Vizinhos do vértice 2.
+          [1, 4],           # Vizinhos do vértice 3.
+          [2, 3]            # Vizinhos do vértice 4.
+          ]
+
+grafo3 =  [ [1, 2, 3],           # Vizinhos do vértice 0.
+          [0, 2, 3],        # Vizinhos do vértice 1.
+          [0, 1, 4],        # Vizinhos do vértice 2.
+          [0, 4],           # Vizinhos do vértice 3.
+          [2]            # Vizinhos do vértice 4.
+          ]
+buscaEmLargura(grafo3, origem, destino)
 ~~~
 ## Tempo de Reação do busca em largura:
 Grafos                  | Tempo de reação            |
