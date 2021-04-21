@@ -52,7 +52,7 @@ nosVisitados = [0, 0, 0, 0, 0]
 origem = 0
 destino = 4
 
-buscaEmLargura(grafo3, origem, destino)
+buscaEmLargura(grafo1, origem, destino)
 ~~~
 ## Tempo de Reação do busca em largura:
 Grafos                  | Tempo de reação            |
