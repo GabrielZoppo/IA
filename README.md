@@ -24,41 +24,39 @@ def buscaEmLargura(grafo, origem, destino):
             if nosVisitados[n] == 0:
                 nosVisitados[n] = 1
                 fila.append(n)
-                
-#declaração dos grafos
-grafo1 =  [ [1],           # Vizinhos do vértice 0.
-          [2, 3],        # Vizinhos do vértice 1.
-          [1, 4],        # Vizinhos do vértice 2.
-          [0],           # Vizinhos do vértice 3.
-          [1]            # Vizinhos do vértice 4.
-          ]
 
-grafo2 =  [ [1, 2 ],           # Vizinhos do vértice 0.
-          [2, 3],        # Vizinhos do vértice 1.
-          [0, 1, 2, 4],        # Vizinhos do vértice 2.
-          [1, 4],           # Vizinhos do vértice 3.
-          [2, 3]            # Vizinhos do vértice 4.
-          ]
-
-grafo3 =  [ [1, 2, 3],           # Vizinhos do vértice 0.
-          [0, 2, 3],        # Vizinhos do vértice 1.
-          [0, 1, 4],        # Vizinhos do vértice 2.
-          [0, 4],           # Vizinhos do vértice 3.
-          [2]            # Vizinhos do vértice 4.
-          ]
-          
 #chamando a função
 nosVisitados = [0, 0, 0, 0, 0]
 origem = 0
 destino = 4
+#declaração dos grafos
+grafo1 =  [ [1],           # Vizinhos do vértice 0.
+          [0, 2, 3],        # Vizinhos do vértice 1.
+          [1, 3, 4],        # Vizinhos do vértice 2.
+          [1, 2, 4],           # Vizinhos do vértice 3.
+          [2, 3]            # Vizinhos do vértice 4.
+          ]
 
+grafo2 =  [ [1, 2 ],           # Vizinhos do vértice 0.
+          [0, 3],        # Vizinhos do vértice 1.
+          [0, 3, 4],        # Vizinhos do vértice 2.
+          [1, 2,  4],           # Vizinhos do vértice 3.
+          [2, 3]            # Vizinhos do vértice 4.
+          ]
+
+grafo3 =  [ [1],           # Vizinhos do vértice 0.
+          [0, 3],        # Vizinhos do vértice 1.
+          [3, 4],        # Vizinhos do vértice 2.
+          [1, 2, 4],           # Vizinhos do vértice 3.
+          [2, 3]            # Vizinhos do vértice 4.
+          ]
 buscaEmLargura(grafo1, origem, destino)
 ~~~
 ## Tempo de Reação do busca em largura:
 Grafos                  | Tempo de reação            |
 :----------------------:|:--------------------------:|             			 		
-Grafo 1                 |0.000031 µs                 |			 		
-Grafo 2                 |0.000039 µs                 |			 		
+Grafo 1                 |0.000057 µs                 |			 		
+Grafo 2                 |0.000048 µs                 |			 		
 Grafo 3                 |0.000036 µs                 |
 
 ## Código python Busca A*:
