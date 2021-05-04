@@ -45,9 +45,9 @@ BuscaEmLargura(visitado, grafo, '5')    # Chamando a função busca em largura
 ## Tempo de Reação dos algoritmos de busca:
 Grafos                  | Tempo de reação da Busca em largura| Tempo de reação da Busca A*        |
 :----------------------:|:----------------------------------:|:----------------------------------:|            			 		
-      1                 |                                    |                                    |			 		
-      2                 |                                    |                                    |			 		
-      3                 |                                    |                                    |
+1                       |                                    |                                    |			 		
+2                       |                                    |                                    |			 		
+3                       |                                    |                                    |
 
 
 
