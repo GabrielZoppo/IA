@@ -231,11 +231,11 @@ if __name__ == "__main__": main()
 ~~~
 
 ## Tempo de Reação dos algoritmos de busca:
-Grafos                  | Tempo de reação da Busca em largura| Tempo de reação da Busca A*        |
+Grafos                  | Quantidade de iterações A*         | Quantidade de iterações BFS        |
 :----------------------:|:----------------------------------:|:----------------------------------:|            			 		
-1                       |0.025ms                             |                                    |			 		
-2                       |0.025ms                             |                                    |			 		
-3                       |0.034ms                             |                                    |
+1                       |7                                   |7                                    |			 		
+2                       |5                                   |7                                    |			 		
+3                       |7                                   |9                                    |
 
 ## Perguntas pedidas:
 * A quantidade de nós em uma árvore influência no desempenho dos algoritmos de busca, de modo a tornar a busca sem informação melhor do que a busca com informação ou vice-versa?
