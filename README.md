@@ -235,7 +235,7 @@ Grafos                  | Tempo de reação da Busca em largura| Tempo de reaç�
 :----------------------:|:----------------------------------:|:----------------------------------:|            			 		
 1                       |0.025ms                             |                                    |			 		
 2                       |0.025ms                             |                                    |			 		
-3                       |0.032                               |                                    |
+3                       |0.032ms                             |                                    |
 
 ## Perguntas pedidas:
 * A quantidade de nós em uma árvore influência no desempenho dos algoritmos de busca, de modo a tornar a busca sem informação melhor do que a busca com informação ou vice-versa?
