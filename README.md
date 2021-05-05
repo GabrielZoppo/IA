@@ -246,7 +246,7 @@ Grafos                  | Tempo de reação da Busca em largura| Tempo de reaç�
 ## Reposta das perguntas:
 * Influencia, pois a busca em largura vai explorar vários nodos, sendo eles necessários ou não, podendo ser mais lento dependendo da situação. Umas das situações é quando o nodo objetivo está no final, sendo assim ele vai explorar todos os nodos, nessa situação a busca A* vai ser mais eficaz por não abrir certos nodos que vão ser desnecessários.
 
-* Vai fazer diferença pois podemos entrar numa situação que vamos explorar mais nodos,podemos utilizar o objetivo no ultimo nodo a direita do grafo, ele vai ler todos os nodos do grafo inteiro, diferente de quando colocamos o objetivo em um dos nodos da esquerda, fazendo com que não testamos todos os nodos possiveis.
+* Vai fazer diferença pois podemos entrar numa situação que vamos explorar mais nodos,podemos utilizar o objetivo no ultimo nodo a direita do grafo, ele vai ler todos os nodos do grafo inteiro, diferente de quando colocamos o objetivo em um dos nodos da esquerda, fazendo com que não testamos todos os nodos possíveis.
 
 
 *  Varredura de informações em espaços pequenos.
