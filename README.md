@@ -233,9 +233,9 @@ if __name__ == "__main__": main()
 ## Tempo de Reação dos algoritmos de busca:
 Grafos                  | Tempo de reação da Busca em largura| Tempo de reação da Busca A*        |
 :----------------------:|:----------------------------------:|:----------------------------------:|            			 		
-1                       |                                    |                                    |			 		
-2                       |                                    |                                    |			 		
-3                       |                                    |                                    |
+1                       |0.025ms                             |                                    |			 		
+2                       |0.025ms                             |                                    |			 		
+3                       |0.032                               |                                    |
 
 ## Perguntas pedidas:
 * A quantidade de nós em uma árvore influência no desempenho dos algoritmos de busca, de modo a tornar a busca sem informação melhor do que a busca com informação ou vice-versa?
