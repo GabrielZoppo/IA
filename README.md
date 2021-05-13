@@ -1,6 +1,7 @@
 # Inteligência Artifical
 
-## Códigos Utilizados:
+## Trabalho de implementação:
+### Códigos Utilizados:
 * Busca em largura:
 ~~~Python
 import time
@@ -230,20 +231,20 @@ def main():
 if __name__ == "__main__": main()
 ~~~
 
-## Tempo de Reação dos algoritmos de busca:
+### Tempo de Reação dos algoritmos de busca:
 Grafos                  | Quantidade de iterações A*         | Quantidade de iterações BFS        |
 :----------------------:|:----------------------------------:|:----------------------------------:|            			 		
 1                       |7                                   |7                                    |			 		
 2                       |5                                   |7                                    |			 		
 3                       |7                                   |9                                    |
 
-## Perguntas pedidas:
+### Perguntas pedidas:
 * A quantidade de nós em uma árvore influência no desempenho dos algoritmos de busca, de modo a tornar a busca sem informação melhor do que a busca com informação ou vice-versa?
 * A posição de um nó objetivo dentro da árvore influência no desempenho dos algoritmos de busca com e sem informação?
 * Com base nos resultados obtidos, dê exemplo de uma aplicação na qual seja mais vantajoso utilizar o algoritmo de busca sem informação.
 * Com base nos resultados obtidos, dê exemplo de uma aplicação na qual seja mais vantajoso utilizar o algoritmo de busca com informação.
 
-## Reposta das perguntas:
+### Reposta das perguntas:
 * Influencia, pois a busca em largura vai explorar vários nodos, sendo eles necessários ou não, podendo ser mais lento dependendo da situação. Umas das situações é quando o nodo objetivo está no final, sendo assim ele vai explorar todos os nodos, nessa situação a busca A* vai ser mais eficaz por não abrir certos nodos que vão ser desnecessários.
 
 * Vai fazer diferença pois podemos entrar numa situação que vamos explorar mais nodos,podemos utilizar o objetivo no ultimo nodo a direita do grafo, ele vai ler todos os nodos do grafo inteiro, diferente de quando colocamos o objetivo em um dos nodos da esquerda, fazendo com que não testamos todos os nodos possíveis.
@@ -252,3 +253,110 @@ Grafos                  | Quantidade de iterações A*         | Quantidade de i
 *  Varredura de informações em espaços pequenos.
 
 *  Jogos que tenham obstáculos e busca de rotas rápidas em mapas.
+
+
+## Trabalho 1 - Introdução ao aprendizado de máquina:
+*  Tabela pedida:
+			
+Porte	 |Garras	        |Selvagem ou Doméstico |Peso em Kg  |Felino     | 
+:-----:|:--------------:|:--------------------:|:----------:|:---------:|
+Grande |	retrátil      |	Selvagem             |	120       |	Leão      |
+Grande |	retrátil      |	Selvagem             |	300       |	Tigre     |
+Pequeno|	retrátil      |	Selvagem             |	15        |	Cerval    |
+Grande |	retrátil      |	Selvagem             |	30        |	Leopardo  |
+Pequeno|	retrátil      |	Doméstico            |	5         |	Persa     |
+Grande |	retrátil      |	Selvagem             |	50        |	Puma      |
+Grande |	retrátil      |	Selvagem             |	60        |	Onça      |
+Grande |	semi-retráteis|	Selvagem             |	30        |	Chita     |
+Médio  |	retrátil      |	Doméstico            |	8         |	Maine Coon|
+Pequeno|	retrátil      |	Doméstico            |	3         |	Siâmes    |
+
+* Código Python:
+~~~Python
+from sklearn import tree
+
+pequeno = 0
+medio = 1
+grande = 2
+
+retratil = 0
+semi_retratil = 1
+
+selvagem = 0
+domestico = 1
+
+Leão = 0
+Tigre = 1
+Cerval = 2
+Leopardo = 3
+Persa = 4
+Puma = 5
+Onça = 6 
+Chita = 7
+Maine_Coon = 8
+Siâmes = 9
+
+breed = [[grande,retratil, 120, selvagem], [grande, retratil, 300, selvagem], [pequeno, retratil, 15, selvagem], [grande,retratil, 30, selvagem], [pequeno,retratil, 5, domestico], 
+         [grande,retratil, 50, selvagem], [grande,retratil, 60, selvagem], [grande,semi_retratil, 30, selvagem], [medio,retratil, 8, domestico], [pequeno,retratil, 3, domestico]]
+result = [Leão, Tigre, Cerval, Leopardo, Persa, Puma, Onça, Chita, Maine_Coon, Siâmes]
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(breed, result)
+
+porte = input("Entre com o porte (0 - Pequeno / 1 - Média / 2 - Grande): ")
+garra = input("Entre com o tipo de  garra (0 - retratil / 1 - semi-retratil): ")
+peso = input("Entre com o peso: ")
+selvagem = input("Entre se é selvagem ou doméstico (0 - Selvagem / 1 - Domestico): ")
+
+resultadoUsuario = clf.predict([[porte, garra, peso, selvagem]])
+
+if resultadoUsuario == 0:
+    print("É um leão!")
+elif resultadoUsuario == 1:
+    print("É um tigre!")
+elif resultadoUsuario == 2:
+    print("É um cerval!")
+elif resultadoUsuario == 3:
+    print("É um Leopardo!")
+elif resultadoUsuario == 4:
+    print("É um Persa!")
+elif resultadoUsuario == 5:
+    print("É um Puma!")
+elif resultadoUsuario == 6:
+    print("É um Onça!")
+elif resultadoUsuario == 7:
+    print("É um Chita!")     
+elif resultadoUsuario == 8:
+    print("É um Maine Coon!")            
+else:
+    print("É um Siâmes!")
+~~~
+
+* Verificação de Resultado:
+  * 1º Teste:
+    porte = grande 
+    garra = retratil
+    peso = 200
+    selvagem = selvagem
+    **É um Leão!**
+  
+  * 2º Teste:
+    porte = grande 
+    garra = retratil
+    peso = 310
+    selvagem = selvagem
+    **É um Tigre!**
+    
+   * 3º Teste:
+    porte = medio 
+    garra = retratil
+    peso = 5
+    selvagem = domestico
+    **É um Maine Coon!**
+  
+   * 4º Teste:
+    porte = Grande 
+    garra = semi_retratil
+    peso = 40
+    selvagem = selvagem
+    **É um Chita!**
