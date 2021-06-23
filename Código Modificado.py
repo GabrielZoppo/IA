@@ -1,25 +1,27 @@
+# declarando as bibliotecas
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 import numpy as np
+
+# Declarando o caminho do banco de dados
 arquivo = pd.read_csv('D:/Users/usuario/Desktop/heart.csv')
 
+# Tratando os dados
 arquivo['output'] = arquivo['output'].replace('Sem chance', 0)
 arquivo['output'] = arquivo['output'].replace('Com chance', 1)
 print("\n", arquivo.head())
-
 y = arquivo['output']
 x = arquivo.drop(columns=['chol', 'fbs', 'output'], axis=1)
 
-# usando a transformação de log
+# Diminuindo os outliers
 arquivo["age"] = np.log(arquivo.age)
 arquivo["trtbps"] = np.log(arquivo.trtbps)
 arquivo["chol"] = np.log(arquivo.chol)
 arquivo["thalachh"] = np.log(arquivo.thalachh)
 
-# Outliners de novo
 colunas_continua = ["age", "trtbps", "chol", "thalachh", "oldpeak"]
 dados_continuos = arquivo[colunas_continua]
 
@@ -31,8 +33,10 @@ for k, v in dados_continuos.items():
     perc = np.shape(v_col)[0] * 100.0 / np.shape(arquivo)[0]
     print("Column {} outliers = {} => {}%".format(k, len(v_col), round(perc, 3)))
 
+# Dividindo os valores de teste e de treino
 x_treino, x_teste, y_treino, y_teste = train_test_split(x, y, test_size=0.3)
 
+# Treinando os modelos
 modelo = ExtraTreesClassifier()
 print("\n", modelo.fit(x_treino, y_treino))
 
@@ -42,7 +46,7 @@ print("\n", modelo1.fit(x_treino, y_treino))
 modelo2 = GaussianNB()
 print("\n", modelo2.fit(x_treino, y_treino))
 
-
+# Imprimindo os valores
 resultados = modelo.score(x_teste, y_teste)
 resultados = resultados*100
 print("\nPrecisão Arvore de busca: " + str(resultados) + "%")
