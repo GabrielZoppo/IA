@@ -1,4 +1,4 @@
-# declarando as bibliotecas
+# Declarando as bibliotecas
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import ExtraTreesClassifier
